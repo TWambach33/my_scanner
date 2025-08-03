@@ -8,4 +8,12 @@ if [ "$#" -ne 1 ]; then
 fi
 
 TARGET="$1"
+REPORT_FILE="scan_report.txt"
+
 echo "Scanning target: $TARGET"
+echo "--------------------------" > "$REPORT_FILE"
+
+# --- Nmap Scan ---
+echo "[+] Performing Nmap scan..."
+nmap -sV -T4 "$TARGET" >> "$REPORT_FILE"
+echo "[+] Scan complete. Report saved to $REPORT_FILE"
