@@ -1,6 +1,12 @@
 #!/bin/bash
 # Network Vulnerability Scanner
 
+# --- Prerequisite Check ---
+if ! command -v nmap &> /dev/null; then
+    echo "Error: nmap is not installed. Please install it to continue." >&2
+    exit 1
+fi
+
 # --- Input Validation ---
 if [ "$#" -ne 1 ]; then
     echo "Usage: $0 <target_ip_or_hostname>" >&2
