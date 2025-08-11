@@ -1,0 +1,35 @@
+
+:Network Security Scan Report:
+
+Target: scanme.nmap.org
+
+:Open Ports and Detected Services:
+
+22/tcp    open     ssh            OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.13 (Ubuntu Linux; protocol 2.0)
+|   cpe:/a:openbsd:openssh:6.6.1p1: 
+53/tcp    open     domain         (generic dns response: NXDOMAIN)
+80/tcp    open     http           Apache httpd 2.4.7 ((Ubuntu))
+|       Slowloris tries to keep many connections to the target web server open and hold
+|       them open as long as possible.  It accomplishes this by opening connections to
+9929/tcp  open     nping-echo     Nping echo
+31337/tcp open     tcpwrapped
+
+:Potential Vulnerabilities Identified:
+
+--- NSE Script Findings ---
+|   VULNERABLE:
+|   Slowloris DOS attack
+|     State: LIKELY VULNERABLE
+|     IDs:  CVE:CVE-2007-6750
+|       Slowloris tries to keep many connections to the target web server open and hold
+|       them open as long as possible.  It accomplishes this by opening connections to
+|       the target web server and sending a partial request. By doing so, it starves
+
+:Recommendations for Remediation:
+
+- Update all software to the latest versions.
+- Change default credentials immediately.
+- Implement a firewall.
+- Disable unused services and close unnecessary ports.
+
+:End of Report!:
