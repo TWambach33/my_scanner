@@ -1,35 +1,60 @@
 
-:Network Security Scan Report:
+::::::::::Network Security Scan Report::::::::::
 
-Target: scanme.nmap.org
+Target: example.com
 
-:Open Ports and Detected Services:
+::::::::::Open Ports and Detected Services::::::::::
 
-22/tcp    open     ssh            OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.13 (Ubuntu Linux; protocol 2.0)
-|   cpe:/a:openbsd:openssh:6.6.1p1: 
-53/tcp    open     domain         (generic dns response: NXDOMAIN)
-80/tcp    open     http           Apache httpd 2.4.7 ((Ubuntu))
-|       Slowloris tries to keep many connections to the target web server open and hold
-|       them open as long as possible.  It accomplishes this by opening connections to
-9929/tcp  open     nping-echo     Nping echo
-31337/tcp open     tcpwrapped
+53/tcp  open  domain   (generic dns response: NXDOMAIN)
+80/tcp  open  http     AkamaiGHost (Akamai's HTTP Acceleration/Mirror service)
+443/tcp open  ssl/http AkamaiGHost (Akamai's HTTP Acceleration/Mirror service)
 
-:Potential Vulnerabilities Identified:
+::::::::::Potential Vulnerabilities Identified::::::::::
 
 --- NSE Script Findings ---
-|   VULNERABLE:
-|   Slowloris DOS attack
-|     State: LIKELY VULNERABLE
-|     IDs:  CVE:CVE-2007-6750
-|       Slowloris tries to keep many connections to the target web server open and hold
-|       them open as long as possible.  It accomplishes this by opening connections to
-|       the target web server and sending a partial request. By doing so, it starves
+No high-confidence NSE vulnerabilities found.
 
-:Recommendations for Remediation:
+--- Analyzing Service Versions ---
+
+Querying NVD for vulnerabilities in: 7.95 ( https://nmap.org...
+  [+] No vulnerabilities found in NVD for this keyword search.
+
+Querying NVD for vulnerabilities in: report for example.com...
+  [+] No vulnerabilities found in NVD for this keyword search.
+
+Querying NVD for vulnerabilities in: up (0.0064s latency)....
+  [+] No vulnerabilities found in NVD for this keyword search.
+
+Querying NVD for vulnerabilities in: for example.com (not...
+  [+] No vulnerabilities found in NVD for this keyword search.
+
+Querying NVD for vulnerabilities in: for 23.215.0.136: a23-215-0-136.deploy.static.akamaitechnologies.com...
+  [+] No vulnerabilities found in NVD for this keyword search.
+
+Querying NVD for vulnerabilities in: domain (generic dns...
+  [+] No vulnerabilities found in NVD for this keyword search.
+
+Querying NVD for vulnerabilities in: http AkamaiGHost (Akamai's...
+  [+] No vulnerabilities found in NVD for this keyword search.
+
+Querying NVD for vulnerabilities in: ssl/http AkamaiGHost (Akamai's...
+  [+] No vulnerabilities found in NVD for this keyword search.
+
+Querying NVD for vulnerabilities in: unrecognized despite returning...
+  [+] No vulnerabilities found in NVD for this keyword search.
+
+Querying NVD for vulnerabilities in: performed. Please report...
+  [+] No vulnerabilities found in NVD for this keyword search.
+
+Querying NVD for vulnerabilities in: 1 IP address...
+  [+] No vulnerabilities found in NVD for this keyword search.
+No Known Service Versions Detected.
+
+::::::::::Recommendations for Remediation::::::::::
 
 - Update all software to the latest versions.
 - Change default credentials immediately.
 - Implement a firewall.
 - Disable unused services and close unnecessary ports.
 
-:End of Report!:
+::::::::::End of Report!::::::::::
